@@ -30,4 +30,15 @@ describe('with custom excerpt separator', () => {
 <p>second</p>
 <!-- more -->`);
   });
+
+  test('extracts nothing if separator not found', () => {
+    const extract = create({ excerptSeparator: 'asdf' });
+    const post = {
+      templateContent: `<p>first</p>`
+    };
+
+    const result = extract(post);
+
+    expect(result).toBe('');
+  });
 });

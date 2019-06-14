@@ -6,6 +6,8 @@ module.exports = function create(options = {}) {
 
     if (index != -1) {
       return post.templateContent.slice(0, index + excerptSeparator.length);
+    } else {
+      return '';
     }
   };
 };
