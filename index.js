@@ -1,5 +1,7 @@
-const extractExcerpt = require('./extract-excerpt');
+const create = require('./extract-excerpt');
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addShortCode('excerpt', extractExcerpt);
+module.exports = {
+  configFunction(eleventyConfig, options) {
+    eleventyConfig.addShortCode('excerpt', create(options));
+  }
 };
