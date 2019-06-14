@@ -43,18 +43,18 @@ describe('with excerpt separator option', () => {
   });
 });
 
-describe('with excerpt in front-matter', () => {
-  test('uses excerpt from front-matter', () => {
+describe('with excerpt in template data', () => {
+  test('uses excerpt from template data', () => {
     const extract = create();
     const post = {
       data: {
-        excerpt: 'from front-matter'
+        excerpt: 'from template data'
       },
       templateContent: `<p>first</p>`
     };
 
     const result = extract(post);
 
-    expect(result).toBe('from front-matter');
+    expect(result).toBe('from template data');
   });
 });
