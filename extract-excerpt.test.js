@@ -14,7 +14,7 @@ describe('default usage', () => {
   });
 });
 
-describe('with custom excerpt separator', () => {
+describe('with excerpt separator option', () => {
   test('extracts up to and including separator', () => {
     const extract = create({ excerptSeparator: '<!-- more -->' });
     const post = {
@@ -40,5 +40,21 @@ describe('with custom excerpt separator', () => {
     const result = extract(post);
 
     expect(result).toBe('');
+  });
+});
+
+describe('with excerpt in front-matter', () => {
+  test('uses excerpt from front-matter', () => {
+    const extract = create();
+    const post = {
+      data: {
+        excerpt: 'from front-matter'
+      },
+      templateContent: `<p>first</p>`
+    };
+
+    const result = extract(post);
+
+    expect(result).toBe('from front-matter');
   });
 });
