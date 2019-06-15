@@ -1,7 +1,7 @@
 {
   "name": "eleventy-plugin-excerpt",
   "version": "1.0.0",
-  "description": "",
+  "description": "Eleventy plugin for extracting template excerpts",
   "main": "index.js",
   "scripts": {
     "test": "jest"
