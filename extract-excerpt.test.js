@@ -1,9 +1,5 @@
 const create = require('./extract-excerpt');
 
-/*
-options specified but no sep => performs default extract
-*/
-
 describe('default usage', () => {
   test('extracts first paragraph', () => {
     const extract = create();
@@ -78,7 +74,7 @@ describe('with excerpt in template data', () => {
 });
 
 describe('error cases', () => {
-  it('throws Error when template content does not exist', () => {
+  test('throws Error when template content does not exist', () => {
     const extract = create();
     const template = {};
 
@@ -87,7 +83,7 @@ describe('error cases', () => {
     }).toThrow('template content must be a string but was: undefined');
   });
 
-  it('throws Error when template content is not a string', () => {
+  test('throws Error when template content is not a string', () => {
     const extract = create();
     const template = {
       templateContent: 5
@@ -98,11 +94,17 @@ describe('error cases', () => {
     }).toThrow('template content must be a string but was: 5');
   });
 
-  it('throws Error when template object not passed', () => {
+  test('throws Error when template object not passed', () => {
     const extract = create();
 
     expect(() => {
       extract();
     }).toThrow('template is required');
+  });
+
+  test('throws Error when excerpt separator is specified but is not a string', () => {
+    expect(() => {
+      create({ excerptSeparator: 3 });
+    }).toThrow('excerptSeparator must be a string but was: 3');
   });
 });

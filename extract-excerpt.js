@@ -1,6 +1,8 @@
 module.exports = function create(options = {}) {
   const excerptSeparator = options.excerptSeparator || '</p>';
 
+  checkExcerptSeparator(excerptSeparator);
+
   return function extractExcerpt(template) {
     checkTemplate(template);
 
@@ -16,6 +18,12 @@ module.exports = function create(options = {}) {
       : '';
   };
 };
+
+function checkExcerptSeparator(separator) {
+  if (typeof separator !== 'string') {
+    throw new Error('excerptSeparator must be a string but was: ' + separator);
+  }
+}
 
 function checkTemplate(template) {
   if (!template) {
