@@ -1,17 +1,30 @@
 module.exports = function create(options = {}) {
   const excerptSeparator = options.excerptSeparator || '</p>';
 
-  return function extractExcerpt(post) {
-    if (post.data && post.data.excerpt) {
-      return post.data.excerpt;
+  return function extractExcerpt(template) {
+    checkTemplate(template);
+
+    if (template.data && template.data.excerpt) {
+      return template.data.excerpt;
     }
 
-    const index = post.templateContent.indexOf(excerptSeparator);
+    checkTemplateContent(template.templateContent);
 
-    if (index != -1) {
-      return post.templateContent.slice(0, index + excerptSeparator.length);
-    } else {
-      return '';
-    }
+    const index = template.templateContent.indexOf(excerptSeparator);
+    return index !== -1
+      ? template.templateContent.slice(0, index + excerptSeparator.length)
+      : '';
   };
 };
+
+function checkTemplate(template) {
+  if (!template) {
+    throw new Error('template is required');
+  }
+}
+
+function checkTemplateContent(templateContent) {
+  if (typeof templateContent !== 'string') {
+    throw new Error('template content must be a string but was: ' + templateContent);
+  }
+}
