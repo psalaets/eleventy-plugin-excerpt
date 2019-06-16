@@ -87,7 +87,7 @@ Also in the excerpt
 Not in the excerpt
 ```
 
-## Custom excerpt
+## Override excerpt
 
 If your template's front-matter or data file contains a property called "excerpt", that string will be used instead of extracting the excerpt from the template content.
 
