@@ -6,7 +6,7 @@ Eleventy plugin for extracting template excerpts
 
 `npm install eleventy-plugin-excerpt`
 
-Add it to your `.eleventy.js`
+### Add it to your `.eleventy.js`
 
 ```js
 const excerpt = require('eleventy-plugin-excerpt');
@@ -19,6 +19,8 @@ module.exports = function(eleventyConfig) {
 ## Usage
 
 This plugin adds a [universal shortcode](https://www.11ty.io/docs/shortcodes/#universal-shortcodes) named `excerpt` which takes one argument: a template object.
+
+By default, the excerpt will be the first paragraph of the template content.
 
 ### Liquid
 
@@ -72,9 +74,9 @@ module.exports = function(eleventyConfig) {
 
 Then you can have multi paragraph excerpts
 
-```md
+```
 ---
-...
+# ...
 ---
 In the excerpt
 
@@ -89,7 +91,7 @@ Not in the excerpt
 
 If your template's front-matter or data file contains a property called "excerpt", that string will be used instead of extracting the excerpt from the template content.
 
-```md
+```
 ---
 excerpt: 'This is the excerpt'
 ---
