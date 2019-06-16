@@ -62,7 +62,7 @@ module.exports = function({ collections }) {
 
 Everything in the rendered template content up to and including this string becomes the excerpt.
 
-Optional, defaults to `</p>`.
+Optional, defaults to `'</p>'`.
 
 ```js
 module.exports = function(eleventyConfig) {
