@@ -12,6 +12,11 @@
   ],
   "author": "Paul Salaets",
   "license": "MIT",
+  "homepage": "https://github.com/psalaets/eleventy-plugin-excerpt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psalaets/eleventy-plugin-excerpt.git"
+  },
   "devDependencies": {
     "jest": "^24.8.0"
   }

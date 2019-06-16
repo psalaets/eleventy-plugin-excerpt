@@ -6,7 +6,7 @@ Eleventy plugin for extracting template excerpts
 
 `npm install eleventy-plugin-excerpt`
 
-Add it to your config
+Add it to your `.eleventy.js`
 
 ```js
 const excerpt = require('eleventy-plugin-excerpt');
