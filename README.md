@@ -64,6 +64,8 @@ Everything in the rendered template content up to and including this string beco
 
 Optional, defaults to `'</p>'`.
 
+For example, if you configure the plugin like this
+
 ```js
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(excerpt, {
