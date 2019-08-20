@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2019-08-19
+
+### Changed
+
+- Metadata
+
 ## [1.1.1] - 2019-06-15
 
 ### Fixed
